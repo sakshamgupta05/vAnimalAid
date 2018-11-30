@@ -1,0 +1,53 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <a routerLink="/" id="navbar-logo-small" class="brand-logo center hide-on-med-and-up"><img class="navbar-logo" src="assets/images/logo/white/logo-80px.png" alt="Logo"/> Animal Aid</a>
+      <a routerLink="/" id="navbar-logo-med" class="brand-logo center hide-on-small-only hide-on-large-only"><img class="navbar-logo" src="assets/images/logo/white/logo-80px.png" alt="Logo"/> Animal Aid</a>
+      <a routerLink="/" id="navbar-logo-large" class="brand-logo hide-on-med-and-down"><img class="navbar-logo" src="assets/images/logo/white/logo-80px.png" alt="Logo"/> Animal Aid</a>
+      <ul class="right hide-on-med-and-down">
+        <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+          <a routerLink="/"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/blog"><i class="fa fa-newspaper-o"></i> Blog</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+          <a routerLink="/rescue"><i class="fa fa-ambulance"></i> Rescue</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+          <a routerLink="/hospitals"><i class="fa fa-map-marker"></i> Hospitals</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+          <a routerLink="/legal"><i class="fa fa-legal"></i> Legal</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<ul id="slide-out" class="side-nav">
+  <li><div class="user-view">
+    <div class="background">
+      <img src="assets/images/office.png">
+    </div>
+    <img id="side-logo" src="assets/images/logo/white/logo-80px.png">
+    <span id="side-name" class="white-text email">Animal Aid</span>
+  </div></li>
+  <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+    <a class="waves-effect" routerLink="/"><i class="fa fa-home"></i> Home</a>
+  </li>
+  <li routerLinkActive="active">
+    <a class="waves-effect" routerLink="/blog"><i class="fa fa-newspaper-o"></i> Blog</a>
+  </li>
+  <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+    <a class="waves-effect" routerLink="/rescue"><i class="fa fa-ambulance"></i> Rescue</a>
+  </li>
+  <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+    <a class="waves-effect" routerLink="/hospitals"><i class="fa fa-map-marker"></i> Hospitals</a>
+  </li>
+  <li routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+    <a class="waves-effect" routerLink="/legal"><i class="fa fa-legal"></i> Legal</a>
+  </li>
+</ul>

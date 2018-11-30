@@ -1,0 +1,42 @@
+#home-head {
+  padding: 30px 0;
+
+   .container {
+     background: #fff;
+     opacity: .8;
+     padding: 30px;
+   }
+}
+
+#blog {
+  margin-top: -64px;
+}
+
+@media (max-width: 600px) {
+  #blog {
+    margin-top: -56px;
+  }
+}
+
+.subheader {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.card-content {
+  p {
+    text-align: justify;
+  }
+}
+
+h1 {
+  font-family: 'PT Sans', sans-serif;
+}
+
+#preloader {
+  height: 600px;
+}
+
+#content {
+  display: none;
+}

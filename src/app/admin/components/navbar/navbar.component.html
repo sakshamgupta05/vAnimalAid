@@ -1,0 +1,52 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <a routerLink="/admin/" id="navbar-logo-small" class="brand-logo center hide-on-med-and-up"><img class="navbar-logo" src="assets/images/logo/white/logo-80px.png" alt="Logo"/> Admin</a>
+      <a routerLink="/admin/" id="navbar-logo-med" class="brand-logo center hide-on-small-only hide-on-large-only"><img class="navbar-logo" src="assets/images/logo/white/logo-80px.png" alt="Logo"/> Admin</a>
+      <a routerLink="/admin/" id="navbar-logo-large" class="brand-logo hide-on-med-and-down"><img class="navbar-logo" src="assets/images/logo/white/logo-80px.png" alt="Logo"/> Admin</a>
+      <ul class="right hide-on-med-and-down">
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+          <a routerLink="/admin"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active">
+          <a routerLink="/admin/blog"><i class="fa fa-newspaper-o"></i> Blog</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active">
+          <a routerLink="/admin/hospitals"><i class="fa fa-map-marker"></i> Hospitals</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active">
+          <a routerLink="/admin/legal"><i class="fa fa-legal"></i> Legal</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+          <a routerLink="/admin/register"><i class="fa fa-user-plus"></i> Register</a>
+        </li>
+        <li *ngIf="authService.loggedIn()">
+          <a (click)="onLogoutClick()"><i class="fa fa-sign-out"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<ul id="slide-out" class="side-nav">
+  <li *ngIf="authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+    <a class="waves-effect" routerLink="/admin"><i class="fa fa-home"></i> Home</a>
+  </li>
+  <li *ngIf="authService.loggedIn()" routerLinkActive="active">
+    <a class="waves-effect" [routerLink]="['/admin/blog', 1]"><i class="fa fa-newspaper-o"></i> Blog</a>
+  </li>
+  <li *ngIf="authService.loggedIn()" routerLinkActive="active">
+    <a class="waves-effect" routerLink="/admin/hospitals"><i class="fa fa-map-marker"></i> Hospitals</a>
+  </li>
+  <li *ngIf="authService.loggedIn()" routerLinkActive="active">
+    <a class="waves-effect" routerLink="/admin/legal"><i class="fa fa-legal"></i> Legal</a>
+  </li>
+  <li *ngIf="authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+    <a class="waves-effect" routerLink="/admin/register"><i class="fa fa-user-plus"></i> Register</a>
+  </li>
+  <li *ngIf="authService.loggedIn()">
+    <a (click)="onLogoutClick()"><i class="fa fa-sign-out"></i> Logout</a>
+  </li>
+</ul>

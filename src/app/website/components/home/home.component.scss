@@ -1,0 +1,32 @@
+#home-head {
+  padding: 30px 0;
+
+   .container {
+     background: #fff;
+     opacity: .8;
+     padding: 30px;
+   }
+}
+
+#home-section-a {
+  padding: 30px 0;
+   text-align: center;
+   .fa {
+     font-size: 60px;
+   }
+}
+
+
+#main {
+  margin-top: -60px;
+}
+
+@media (max-width: 600px) {
+  #main {
+    margin-top: -56px;
+  }
+}
+
+h1 {
+  font-family: 'PT Sans', sans-serif;
+}

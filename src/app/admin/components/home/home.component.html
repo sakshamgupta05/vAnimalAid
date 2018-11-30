@@ -1,0 +1,65 @@
+<section class="section">
+  <div class="container">
+
+    <div id="preloader" class="row">
+      <div class="col s12 center">
+        <div class="preloader-wrapper active">
+          <div class="spinner-layer spinner-teal-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content" class="row">
+
+      <div class="col s12 m6 offset-m3">
+        <div class="card">
+          <div class="card-content">
+
+            <span class="card-title"><strong>Profile</strong></span>
+            <h6>Name: {{ user.name }}</h6>
+            <h6>Email: {{ user.email }}</h6>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 offset-m3">
+        <div class="card">
+          <div class="card-content">
+
+            <span class="card-title"><strong>Change Password</strong></span>
+            <!-- <h4>Change Password</h4> -->
+            <form id="changePasswordForm" (submit)="changePassword()">
+              <div class="input-field">
+                <input type="password" [(ngModel)]="currentPassword" name="currentPassword" class="validate">
+                <label for="currentPassword">Current Password</label>
+              </div>
+              <div class="input-field">
+                <input type="password" [(ngModel)]="newPassword" name="newPassword" class="validate">
+                <label for="newPassword">New Password</label>
+              </div>
+              <div class="input-field">
+                <input type="password" [(ngModel)]="newPassword2" name="newPassword2" class="validate">
+                <label for="newPassword2">Confirm Password</label>
+              </div>
+              <div class="progress" *ngIf="disabled">
+                <div class="indeterminate"></div>
+              </div>
+              <button class="btn waves-effect waves-light" type="submit" name="action" [disabled]='disabled'>Change Password</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><strong>Add Legal</strong></span>
+            <form>
+              <div class="input-field">
+                <input type="text" class="validate" [(ngModel)]="title" name="title">
+                <label for="title">Title</label>
+              </div>
+
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>PDF</span>
+                  <input id="file" type="file" ng2FileSelect [uploader]="uploader" accept=".pdf" [disabled]='disabled'>
+                </div>
+                <div class="file-path-wrapper">
+                  <input id="filename" class="file-path validate" type="text">
+                </div>
+              </div>
+              <div *ngIf="uploader.queue.length>0">
+                {{ uploader.queue[uploader.queue.length-1].file.size/1024/1024 | number:'.2' }} MB
+              </div>
+
+              <div class="progress" style="margin-bottom: 0;" *ngIf="uploader.queue.length>0">
+                  <div class="determinate" [ngStyle]="{ 'width': uploader.queue[uploader.queue.length-1].progress + '%' }"></div>
+              </div>
+              <div class="progress" *ngIf="disabled && uploader.queue.length==0">
+                <div class="indeterminate"></div>
+              </div>
+              <button id="submit" type="button" class="btn waves-effect waves-light" (click)="upload()" [disabled]='disabled'>Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

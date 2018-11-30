@@ -1,0 +1,63 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m8 offset-m2">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><strong>Add Hospital</strong></span>
+            <form (submit)="onSubmit()">
+
+              <div class="input-field">
+                <input type="text" [(ngModel)]="name" name="name" class="validate">
+                <label for="name">Name</label>
+              </div>
+
+              <div class="input-field">
+                <textarea id="body" [(ngModel)]="address" name="address" class="materialize-textarea"></textarea>
+                <label for="address">Address</label>
+              </div>
+
+              <div id="contacts" *ngFor="let cont of contacts; let i = index">
+                <a (click)="removeContact(i)"><i class="material-icons prefix">cancel</i></a>
+                {{ cont }}
+              </div>
+              <form (submit)="addContact()">
+                <div class="row">
+                  <div class="col s12">
+                    <button type="submit" class="waves-effect waves-light btn">Add</button>
+                    <div class="input-field inline">
+                      <input type="text" [(ngModel)]="contact" name="contact" class="validate">
+                      <label for="contact">Contact</label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div class="row">
+                <div class="col s6">
+                  <div class="input-field">
+                    <input type="text" [(ngModel)]="lat" name="lat" class="validate">
+                    <label for="lat">Lat</label>
+                  </div>
+                </div>
+                <div class="col s6">
+                  <div class="input-field">
+                    <input type="text" [(ngModel)]="lng" name="lng" class="validate">
+                    <label for="lng">Lng</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress" *ngIf="disabled">
+                <div class="indeterminate"></div>
+              </div>
+              <button id="submit" class="btn waves-effect waves-light" type="submit" name="action" [disabled]='disabled'>Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

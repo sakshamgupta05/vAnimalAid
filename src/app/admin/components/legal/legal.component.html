@@ -1,0 +1,43 @@
+<section class="section">
+  <div class="container">
+
+    <div id="preloader" class="row">
+      <div class="col s12 center">
+        <div class="preloader-wrapper active">
+          <div class="spinner-layer spinner-teal-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content" class="row">
+
+      <div class="col l12">
+        <button type="button" class="waves-effect waves-light btn" (click)="addLegal()">Add</button>
+      </div>
+
+      <div class="col s12 m4" *ngFor="let legal of legalList">
+        <div class="card">
+          <a id="delete" class="secondary-content" (click)="delete(legal._id, legal.filename)"><i class="material-icons prefix">cancel</i></a>
+          <div class="card-image">
+            <img src="assets/images/pdf.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title center-align">{{ legal.title }}</span>
+          </div>
+          <div class="card-action">
+            <a href="assets/legal/{{legal.filename}}" target="_blank">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

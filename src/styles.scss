@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./sass/custom";
+@import "./sass/functions";
+$roboto-font-path: "~materialize-css/dist/fonts/roboto/";
+@import "~materialize-css/sass/materialize";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";

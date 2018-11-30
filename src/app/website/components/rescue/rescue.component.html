@@ -1,0 +1,99 @@
+<div class="parallax-container">
+  <div class="parallax"><img src="assets/images/rescue-head-bg.jpeg"></div>
+  <section id="home-head" class="center">
+    <div class="container">
+      <h1>Rescue</h1>
+      <p class="lead">It's hard to see them arrive whether they're battered, abandoned, or starving. Sometimes, its just as hard to see them leave, even to the best of homes. A rescuer most selfless quality is to make room to save another, regardless of how it hurts to say goodbye.</p>
+      <a scrollTo href="#blog" class="btn btn-primary"><i class="material-icons right">keyboard_arrow_down</i>Read More</a>
+    </div>
+  </section>
+</div>
+
+<section id="blog">
+  <br><br><br>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card">
+          <div class="card-content">
+            <h4>Report a Case</h4>
+            <form id="rescue">
+              <div class="input-field">
+                <i class="material-icons prefix">format_list_bulleted</i>
+                <select id="animal">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="Bird">Bird</option>
+                  <option value="Cat">Cat</option>
+                  <option value="Cow">Cow</option>
+                  <option value="Dog">Dog</option>
+                  <option value="Elephant">Elephant</option>
+                  <option value="Guinea Pig">Guinea Pig</option>
+                  <option value="Hamster">Hamster</option>
+                  <option value="Horse">Horse</option>
+                  <option value="Pig">Pig</option>
+                  <option value="Other">Other</option>
+                </select>
+                <label>Animal</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="text" class="validate" [(ngModel)]="name" name="name">
+                <label for="name">Full Name</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <input type="number" class="validate" [(ngModel)]="mobile" name="mobile">
+                <label for="mobile">Mobile Number</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input type="email" class="validate" [(ngModel)]="email" name="email">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">location_on</i>
+                <input type="text" class="validate" [(ngModel)]="location" name="location">
+                <label for="location">Location</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">map</i>
+                <input type="text" class="validate" [(ngModel)]="landmark" name="landmark">
+                <label for="landmark">Landmark</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea [(ngModel)]="message" name="message" class="materialize-textarea"></textarea>
+                <label for="message">Message</label>
+              </div>
+
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Image</span>
+                  <input id="file" type="file" ng2FileSelect [uploader]="uploader" accept="image/jpeg" [disabled]='disabled'>
+                </div>
+                <div class="file-path-wrapper">
+                  <input id="filename" class="file-path validate" type="text">
+                </div>
+              </div>
+              Only jpg format images with size < 10MB allowed.<br>
+              <div *ngIf="uploader.queue.length>0">
+                {{ uploader.queue[uploader.queue.length-1].file.size/1024/1024 | number:'.2' }} MB
+              </div>
+
+              <div class="progress" style="margin-bottom: 0;" *ngIf="uploader.queue.length>0">
+                <div class="determinate" [ngStyle]="{ 'width': uploader.queue[uploader.queue.length-1].progress + '%' }"></div>
+              </div>
+              <div class="progress" *ngIf="disabled && uploader.queue.length==0">
+                <div class="indeterminate"></div>
+              </div>
+              <button id="submit" type="button" class="btn waves-effect waves-light" (click)="upload()" [disabled]='disabled'>Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
