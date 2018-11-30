@@ -38,14 +38,14 @@ router.post('/submit', function (req, res, next) {
     port: 465,
     secure: true, // use SSL
     auth: {
-        user: process.env.user,
-        pass: process.env.pass
+        user: process.env.USER,
+        pass: process.env.PASS
     }
   });
 
   var mailOptions = {
-      from: `"Animal Aid " <${process.env.user}>`, // sender address (who sends)
-      to: process.env.to, // list of receivers (who receives)
+      from: `"Animal Aid " <${process.env.USER}>`, // sender address (who sends)
+      to: process.env.TO, // list of receivers (who receives)
       subject: 'Rescue', // Subject line
       text: 'Rescue', // plaintext body
       html: '<b>Animal:</b> '+details.animal+'<br><b>Name:</b> '+details.name+'<br><b>Mobile:</b> '+details.mobile+'<br><b>Email:</b> '+details.email+'<br><b>Location:</b> '+details.location+'<br><b>Landmark:</b> '+details.landmark+'<br><b>Message:</b> '+details.message,
